@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "396656072556",
+    "project_id": "virtualconsult-1",
+    "storage_bucket": "virtualconsult-1.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:396656072556:android:440a68b33e2e6a3bad0549",
+        "android_client_info": {
+          "package_name": "com.example.consultapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB393zNEUhcayxFHq-LuhXtvFqnftxHQjU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
