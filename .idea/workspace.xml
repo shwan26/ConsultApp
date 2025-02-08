@@ -17,70 +17,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd41ef91-cd9d-43a7-afb0-40d2a5981fcd" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/example/consultapp/CustomTopBar.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/.idea/deploymentTargetSelector.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/.idea/gradle.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/.idea/kotlinc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/.idea/migrations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/.idea/runConfigurations.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/build.gradle.kts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/google-services.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/proguard-rules.pro" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/src/androidTest/java/com/example/consultapp/ExampleInstrumentedTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/src/main/AndroidManifest.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/src/main/java/com/example/consultapp/AdminActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/src/main/java/com/example/consultapp/AppointmentRequest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/src/main/java/com/example/consultapp/ApprovePatientsActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/src/main/java/com/example/consultapp/ChatActivityDoctor.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/src/main/java/com/example/consultapp/ChatActivityPatient.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/src/main/java/com/example/consultapp/DoctorActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/src/main/java/com/example/consultapp/LiveConsultationActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/src/main/java/com/example/consultapp/MainActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/src/main/java/com/example/consultapp/MessageBubble.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/src/main/java/com/example/consultapp/Patient.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/src/main/java/com/example/consultapp/PatientActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/src/main/java/com/example/consultapp/PatientListActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/src/main/java/com/example/consultapp/SelectDoctorActivity.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/src/main/java/com/example/consultapp/ui/theme/Color.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/src/main/java/com/example/consultapp/ui/theme/Theme.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/src/main/java/com/example/consultapp/ui/theme/Type.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/src/main/res/drawable/ic_launcher_background.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/src/main/res/drawable/ic_launcher_foreground.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/src/main/res/layout/activity_main.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/src/main/res/mipmap-hdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/src/main/res/mipmap-hdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/src/main/res/mipmap-mdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/src/main/res/mipmap-mdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/src/main/res/mipmap-xhdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/src/main/res/mipmap-xhdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/src/main/res/mipmap-xxhdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/src/main/res/mipmap-xxxhdpi/ic_launcher.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/src/main/res/values/colors.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/src/main/res/values/strings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/src/main/res/values/themes.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/src/main/res/xml/backup_rules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/src/main/res/xml/data_extraction_rules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/app/src/test/java/com/example/consultapp/ExampleUnitTest.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/build.gradle.kts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/gradle.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/gradle/libs.versions.toml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/gradlew" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/gradlew.bat" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ConsultApp/settings.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/consultapp/ApprovePatientsActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/consultapp/ApprovePatientsActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/consultapp/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/consultapp/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/libs.versions.toml" beforeDir="false" afterPath="$PROJECT_DIR$/gradle/libs.versions.toml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,13 +77,14 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Android App.app.executor": "Run",
+    "ResourceManagerPrefKey.ResourceType": "DRAWABLE",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
     "RunOnceActivity.readMode.enableVisualFormatting": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "com.google.services.firebase.aqiPopupShown": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "version1.0",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/syank/AndroidStudioProjects/ConsultApp",
     "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings"
@@ -147,6 +92,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/src/main/res/drawable" />
       <recent name="$PROJECT_DIR$/app/src/main/java/com/example/consultapp/ui/theme" />
       <recent name="$PROJECT_DIR$/app" />
     </key>
@@ -237,6 +183,11 @@
       <updated>1738854734947</updated>
     </task>
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
   </component>
   <component name="play_dynamic_filters_status">
     <option name="appIdToCheckInfo">

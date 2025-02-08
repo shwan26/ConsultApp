@@ -49,12 +49,16 @@ dependencies {
     implementation(libs.firebase.analytics)
 
     implementation(libs.androidx.core.ktx.v190)
+    implementation (libs.androidx.material.icons.extended)
 
     implementation(libs.androidx.activity.compose.v160)
     implementation(libs.material3)
     implementation(libs.ui.tooling.preview)
     implementation(libs.androidx.navigation.runtime.ktx)
     implementation(libs.androidx.navigation.compose)
+    implementation(libs.androidx.foundation.layout.android)
+    implementation(libs.androidx.foundation.layout.android)
+    implementation(libs.androidx.foundation.layout.android)
     implementation(libs.androidx.foundation.layout.android)
     implementation(libs.androidx.foundation.layout.android)
     implementation(libs.androidx.foundation.layout.android)

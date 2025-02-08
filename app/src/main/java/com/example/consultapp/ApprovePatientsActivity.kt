@@ -24,8 +24,11 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateListOf
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
@@ -42,10 +45,16 @@ class ApprovePatientsActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            ConsultAppTheme {
+            var isDarkMode by remember { mutableStateOf(false) }
+            ConsultAppTheme(darkTheme = isDarkMode)   {
                 val navController = rememberNavController()
                 // For demonstration, we use a hardcoded doctor ID.
-                ApproveAppointmentsView(doctorId = "DrJohnDoe", navController = navController)
+                ApproveAppointmentsView(
+                    doctorId = "DrJohnDoe",
+                    navController = navController,
+                    darkModeEnabled = isDarkMode,
+                    onToggleDarkMode = {isDarkMode = !isDarkMode }
+                )
             }
         }
     }
@@ -53,7 +62,12 @@ class ApprovePatientsActivity : ComponentActivity() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ApproveAppointmentsView(doctorId: String, navController: NavHostController) {
+fun ApproveAppointmentsView(
+    doctorId: String,
+    navController: NavHostController,
+    darkModeEnabled: Boolean,
+    onToggleDarkMode: () -> Unit
+) {
     val context = LocalContext.current
     // A list to hold appointment requests retrieved from Firebase.
     val requests = remember { mutableStateListOf<AppointmentRequest>() }
@@ -97,13 +111,11 @@ fun ApproveAppointmentsView(doctorId: String, navController: NavHostController) 
 
     Scaffold(
         topBar = {
-            TopAppBar(
-                title = { Text("Approve Patients") },
-                navigationIcon = {
-                    IconButton(onClick = { (context as? Activity)?.finish() }) {
-                        Icon(Icons.Default.ArrowBack, contentDescription = "Back")
-                    }
-                }
+            CustomTopAppBar(
+                title = "Approve Patients",
+                onBack = { (context as? Activity)?.finish() },
+                darkModeEnabled = darkModeEnabled,
+                onToggleDarkMode = onToggleDarkMode
             )
         },
         content = { padding ->
