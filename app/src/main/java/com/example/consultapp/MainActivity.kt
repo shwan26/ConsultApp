@@ -55,16 +55,22 @@ class MainActivity : ComponentActivity() {
         auth = Firebase.auth
 
         setContent {
-            ConsultAppTheme {
+            // Step 3: Create a state variable for dark mode.
+            var isDarkMode by remember { mutableStateOf(false) }
+
+            // Pass the dark mode state into your custom theme.
+            ConsultAppTheme(darkTheme = isDarkMode) {
                 val navController = rememberNavController()
                 NavHost(navController = navController, startDestination = "roleSelection") {
-                    // Role Selection Screen (only patient and doctor)
                     composable("roleSelection") {
-                        RoleSelectionScreen(onRoleSelected = { role ->
-                            navController.navigate("login/$role")
-                        })
+                        RoleSelectionScreen(
+                            darkModeEnabled = isDarkMode,
+                            onToggleDarkMode = { isDarkMode = !isDarkMode },
+                            onRoleSelected = { role ->
+                                navController.navigate("login/$role")
+                            }
+                        )
                     }
-                    // Login Screen: Includes back and create account options.
                     composable(
                         "login/{role}",
                         arguments = listOf(navArgument("role") { type = NavType.StringType })
@@ -72,12 +78,13 @@ class MainActivity : ComponentActivity() {
                         val role = backStackEntry.arguments?.getString("role") ?: ""
                         RoleLoginScreen(
                             role = role,
+                            darkModeEnabled = isDarkMode,
+                            onToggleDarkMode = { isDarkMode = !isDarkMode },
                             onLoginSuccess = { navController.navigate(role) },
                             onBack = { navController.popBackStack() },
                             onNavigateToCreateAccount = { navController.navigate("createAccount/$role") }
                         )
                     }
-                    // Create Account Screen: Stores the selected role.
                     composable(
                         "createAccount/{role}",
                         arguments = listOf(navArgument("role") { type = NavType.StringType })
@@ -85,6 +92,8 @@ class MainActivity : ComponentActivity() {
                         val role = backStackEntry.arguments?.getString("role") ?: ""
                         CreateAccountScreen(
                             role = role,
+                            darkModeEnabled = isDarkMode,
+                            onToggleDarkMode = { isDarkMode = !isDarkMode },
                             onCreateAccountSuccess = { navController.navigate(role) },
                             onBack = { navController.popBackStack() }
                         )
@@ -108,9 +117,19 @@ class MainActivity : ComponentActivity() {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun RoleSelectionScreen(onRoleSelected: (String) -> Unit) {
+fun RoleSelectionScreen(
+    darkModeEnabled: Boolean,
+    onToggleDarkMode: () -> Unit,
+    onRoleSelected: (String) -> Unit
+) {
     Scaffold(
-        topBar = { TopAppBar(title = { Text("Login") }) },
+        topBar = {
+            CustomTopAppBar(
+                title = "Login",
+                darkModeEnabled = darkModeEnabled,
+                onToggleDarkMode = onToggleDarkMode
+            )
+        },
         content = { padding ->
             Column(
                 modifier = Modifier
@@ -133,10 +152,13 @@ fun RoleSelectionScreen(onRoleSelected: (String) -> Unit) {
     )
 }
 
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun RoleLoginScreen(
     role: String,
+    darkModeEnabled: Boolean,
+    onToggleDarkMode: () -> Unit,
     onLoginSuccess: () -> Unit,
     onBack: () -> Unit,
     onNavigateToCreateAccount: () -> Unit
@@ -148,13 +170,11 @@ fun RoleLoginScreen(
 
     Scaffold(
         topBar = {
-            TopAppBar(
-                title = { Text("Login as $role") },
-                navigationIcon = {
-                    IconButton(onClick = onBack) {
-                        Icon(Icons.Filled.ArrowBack, contentDescription = "Back")
-                    }
-                }
+            CustomTopAppBar(
+                title = "Login as $role",
+                onBack = onBack,
+                darkModeEnabled = darkModeEnabled,
+                onToggleDarkMode = onToggleDarkMode
             )
         },
         content = { padding ->
@@ -233,6 +253,8 @@ fun RoleLoginScreen(
 @Composable
 fun CreateAccountScreen(
     role: String,
+    darkModeEnabled: Boolean,           // Added darkModeEnabled parameter.
+    onToggleDarkMode: () -> Unit,         // Added onToggleDarkMode parameter.
     onCreateAccountSuccess: () -> Unit,
     onBack: () -> Unit
 ) {
@@ -246,13 +268,11 @@ fun CreateAccountScreen(
 
     Scaffold(
         topBar = {
-            TopAppBar(
-                title = { Text("Create Account as $role") },
-                navigationIcon = {
-                    IconButton(onClick = onBack) {
-                        Icon(Icons.Filled.ArrowBack, contentDescription = "Back")
-                    }
-                }
+            CustomTopAppBar(
+                title = "Create Account as $role",
+                onBack = onBack,
+                darkModeEnabled = darkModeEnabled,   // Now these are passed correctly.
+                onToggleDarkMode = onToggleDarkMode
             )
         },
         content = { padding ->
@@ -333,6 +353,7 @@ fun CreateAccountScreen(
         }
     )
 }
+
 
 
 @Composable
